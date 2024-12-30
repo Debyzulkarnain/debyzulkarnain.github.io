@@ -1004,7 +1004,7 @@
         <div class="col-lg-6">
           <h3 class="st-contact-title">Just say Hello</h3>
           <div id="st-alert"></div>
-          <form action="#" name="client-contact" method="POST" class="st-contact-form" id="contact-form">
+          <form action="#" name="client-contact" method="POST" class="st-contact-form" id="client-contact">
             <div class="st-form-field">
               <input type="text" id="name" name="nama" placeholder="Your Name" required>
             </div>
@@ -1101,6 +1101,10 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
+  <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+  <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+  <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+  
   <script src="assets/js/jquery-1.12.4.min.js"></script>
   <script src="assets/js/jquery.slick.min.js"></script>
   <script src="assets/js/lightgallery.min.js"></script>
