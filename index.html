@@ -1023,10 +1023,6 @@
               <span role="status">Loading...</span>
             </button>
           </form>
-          <div class="alert my-alert alert-success alert-dismissible fade show d-none" role="alert">
-            <strong>Thank you,</strong>we have received your message.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
         </div>
         <div class="st-height-b0 st-height-lg-b30"></div>
 
@@ -1104,8 +1100,6 @@
   
     const btnKirim = document.querySelector('.btn-kirim');
     const btnLoading = document.querySelector('.btn-loading');
-    const myAlert = document.querySelector('.my-alert');
-
     form.addEventListener('submit', e => {
       e.preventDefault()
       // 
@@ -1115,7 +1109,6 @@
         .then(response => {
           btnLoading.classList.toggle('d-none')
           btnKirim.classList.toggle('d-none')
-          myAlert.classList.toggle('d-none')
           form.reset()
           console.log('Success!', response)})
         .catch(error => console.error('Error!', error.message))
