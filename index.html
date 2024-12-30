@@ -1001,6 +1001,10 @@
 
     <div class="container">
       <div class="row">
+        <div class="alert my-alert alert-success alert-dismissible fade show d-none" role="alert">
+          <strong>Thank you,</strong>we have received your message.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <div class="col-lg-6">
           <h3 class="st-contact-title">Just say Hello</h3>
           <div id="st-alert"></div>
@@ -1098,10 +1102,20 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxKtAI9uH33UyBEOhfT0oppbMTURJGZNpuJBrWaeUEpSLuibHHZzDYJycTKnetupj5mdQ/exec'
     const form = document.forms['client-contact']
   
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+
     form.addEventListener('submit', e => {
       e.preventDefault()
+      // 
+      btnLoading.classList.toggle('d-none')
+      btnKirim.classList.toggle('d-none')
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then(response => {
+          btnLoading.classList.toggle('d-none')
+          btnKirim.classList.toggle('d-none')
+          console.log('Success!', response)})
         .catch(error => console.error('Error!', error.message))
     })
   </script>
